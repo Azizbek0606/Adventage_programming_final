@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "static_font";
+  src: url(../resource/static_font.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "static_font";
+}
+
+/* Header / Navbar styles - modern black & green, glass effect, responsive */
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.35));
+  border-bottom: 1px solid rgba(0, 255, 128, 0.08);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.navbar-brand .logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.navbar-search form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 255, 128, 0.12);
+}
+
+.navbar-search input[type="text"] {
+  background: transparent;
+  border: none;
+  color: #e6ffe8;
+  padding: 6px 8px;
+  min-width: 220px;
+  outline: none;
+}
+
+.navbar-search button {
+  background: linear-gradient(90deg, #00ff80, #00cc66);
+  color: #001100;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: #bfffd9;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* Responsive: collapse search on small screens */
+@media (max-width: 800px) {
+  .navbar {
+    padding: 10px 14px;
+  }
+  .navbar-search input[type="text"] {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .navbar-search {
+    order: 3;
+    width: 100%;
+  }
+  .navbar-search form {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .navbar-brand {
+    order: 1;
+  }
+  .navbar-links {
+    order: 2;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .navbar-search input[type="text"] {
+    min-width: 40%;
+  }
+}

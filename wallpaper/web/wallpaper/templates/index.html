@@ -1,0 +1,41 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Wallpaper</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <a href="/">
+            <img
+              src="{% static 'resource/logo.png' %}"
+              alt="Wallpaper Logo"
+              class="logo"
+            />
+          </a>
+        </div>
+        <div class="navbar-search">
+          <form action="/search/" method="get">
+            <input type="text" name="q" placeholder="Search wallpapers..." />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div class="navbar-links">
+          <a href="#">Creator's</a>
+          <a href="#">Favorites</a>
+          {% if user.is_authenticated %}
+          <a href="#">Logout</a>
+          {% else %}
+          <a href="#">Login</a>
+          <a href="#">Register</a>
+          {% endif %}
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
